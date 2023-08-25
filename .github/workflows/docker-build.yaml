@@ -21,11 +21,9 @@ jobs:
 
     - name: Set up Docker
       uses: docker/setup-docker@v2
-      with:
-        dockerfile: ./DockerFile/Dockerfile
 
     - name: Build the Docker image
-      run: docker build -t flask-python-test:${{ github.sha }} .
+      run: docker build -f ./DockerFile/DockerFile -t flask-python-test:${{ github.sha }} .
 
     - name: Push the Docker image
       run: docker push flask-python-test:${{ github.sha }}
