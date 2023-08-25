@@ -19,8 +19,8 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Set up Docker
-      uses: docker/setup-docker@v2
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-docker@v2
 
     - name: Build the Docker image
       run: docker build -f ./DockerFile/DockerFile -t flask-python-test:${{ github.sha }} .
