@@ -16,7 +16,7 @@ jobs:
     - name: Set up Docker
       uses: docker/setup-docker@v2
       with:
-        dockerfile: /Users/eubarkana/Documents/FlaskPython/DockerFile/flaskDockerfile
+        dockerfile: ./DockerFile/flaskDockerfile
 
     - name: Build the Docker image
       run: docker build -t flask-python-test:${{ github.sha }} .
