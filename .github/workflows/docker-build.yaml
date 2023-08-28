@@ -26,5 +26,5 @@ jobs:
       run: docker build -f ./DockerFile/DockerFile -t flask-python-test:${{ github.sha }} .
 
     - name: Push the Docker image
-      run: docker push ${{ secrets.DOCKER_USERNAME }}/flask-python-test:${{ github.sha }}
+      run: docker push eubarkana/flask-python-test:${{ github.sha }}
 
