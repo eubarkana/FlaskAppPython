@@ -27,5 +27,3 @@ jobs:
 
     - name: Push the Docker image
       run: docker image push eubarkana\flask-python-test:${{ github.sha }}
-      with:
-        username: ${{ secrets.DOCKER_USERNAME }}
