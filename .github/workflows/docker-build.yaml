@@ -23,7 +23,7 @@ jobs:
       uses: docker/setup-buildx-action@v2
 
     - name: Build the Docker image
-      run: docker build -f ./DockerFile/DockerFile -t eubarkana\flask-python-test:${{ github.sha }} .
+      run: docker build -f ./DockerFile/DockerFile -t eubarkana/flask-python-test:${{ github.sha }} .
 
     - name: Push the Docker image
-      run: docker image push eubarkana\flask-python-test:${{ github.sha }}
+      run: docker image push eubarkana/flask-python-test:${{ github.sha }}
