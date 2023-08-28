@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+  env:
+    REPO_USER: ${{ secrets.DOCKER_USERNAME }}
+    IMAGE_TAG: ${{ github.sha }}
+    IMAGE_NAME: flask-python-test
 
 jobs:
   build:
@@ -23,7 +27,7 @@ jobs:
       uses: docker/setup-buildx-action@v2
 
     - name: Build the Docker image
-      run: docker build -f ./DockerFile/DockerFile -t eubarkana/flask-python-test:${{ github.sha }} .
+      run: docker build -f ./DockerFile/DockerFile -t $REPO_USER/$IMAGE_NAME:$IMAGE_TAG .
 
     - name: Push the Docker image
-      run: docker image push eubarkana/flask-python-test:${{ github.sha }}
+      run: docker push $REPO_USER/$IMAGE_NAME:$IMAGE_TAG
