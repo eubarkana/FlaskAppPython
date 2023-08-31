@@ -1,6 +1,11 @@
 # Configuring Python Flask sample application with github workflow on Docker
 
 This project shows a sample Python Flask application to be build and pushed as image to docker hub. 
+## Pre-requirements
+- Git installed on your machine.
+- GitHub Account.
+- Docker installed on your machine.
+- A GitHub repository with a Dockerfile and/or Docker Compose file.
 
 ## Requirements
 
